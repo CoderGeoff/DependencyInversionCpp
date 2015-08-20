@@ -8,7 +8,7 @@
 #include "MoveOutcome.h"
 
 SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
-    : m_Board(10), 
+    : m_Board(std::make_shared<Board>(10)), 
     m_Move(m_Board)
 {
     std::transform(players.begin(), players.end(), back_inserter(m_Players), [](const std::string& name){ return Player(name);});
@@ -21,7 +21,7 @@ void SnakesAndLadders::Play()
     std::cout << "Let's start" << std::endl;
 
     for (int playerIndex = 0;
-        m_Players[playerIndex].Square() != m_Board.LastSquare();
+        m_Players[playerIndex].Square() != m_Board->LastSquare();
         playerIndex = ++playerIndex % m_Players.size())
     {
         Player& player = m_Players[playerIndex];

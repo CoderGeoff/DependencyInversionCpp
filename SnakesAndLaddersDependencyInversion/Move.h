@@ -1,14 +1,14 @@
 #pragma once
-#include <ostream>
+#include <memory>
 #include "Board.h"
 
 class MoveOutcome;
 
 class Move
 {
-    Board m_Board;
+    std::shared_ptr<IBoard> m_Board;
 public:
-    Move(const Board& board);
+    Move(const std::shared_ptr<IBoard>& board);
     MoveOutcome Execute(int startSquare, int squaresToMove);
 };
 
