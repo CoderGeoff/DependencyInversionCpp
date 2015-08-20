@@ -23,11 +23,11 @@ There are no tests for SnakesAndLadders, but there is a project,  SnakesAndLadde
 Your task is to write a test to prove that, given a player on the first square on the board (numbered 1), when they take a move, they move forward the number of squares on the dice. 
 If you look in  SnakesAndLaddersTests\AcceptanceTests.cpp, you'll find test case declaration that just needs filling in.
 
-'''
+```
 TEST(AcceptanceTests, GivenAPlayerOnSquare1_WhenTheyTakeATurn_TheyShouldMoveForwardTheNumberShownOnTheDie)
 {
 }
-'''
+```
 
 This is not straightforward task, but it is possible! You will have to change the Snakes And Ladders code to achieve it. If you want, you can  run the game to see whether it's still working; just run ConsoleBasedGame.exe.
 
@@ -38,11 +38,11 @@ If you succeeded at the first task your next is to write a test case to prove th
 
 Your task is to write a test to prove the game ends when a player reaches the last square on the board. The test case should look something like this;
 
-'''
+```
 TEST(AcceptanceTests, GivenABoad_WhenAPlayerLandsOnTheLastSquare_TheGameShouldEndWithNoMoreDiceThrows)
 {
 }
-'''
+```
  
  or something to this effect. 
  
@@ -80,11 +80,11 @@ The tests for SnakesAndLaddersDependencyInversion are in SnakesAndLaddersDITests
 Your task is to write a test to prove that, given a player on the second square on the board (numbered 2), when they  move 1, they end up on square 3. 
 If you look in  SnakesAndLaddersDITests\MoveTests.cpp, you'll find test case declaration that just needs filling in.
 
-'''
+```
 TEST(MoveTests, GivenIAmOnSquare2_WhenIMove1Square_IShouldBeOnSquare3)
 {
 }
-'''
+```
 
 You will find it useful to use BoardWith10SquaresAndNoSnakes.
 
@@ -95,11 +95,11 @@ You will find it useful to use BoardWith10SquaresAndNoSnakes.
 Your second task is to write a test to  prove that when a player moves to the last square on the board, the game ends with out any further dice throws. 
 If you look in  SnakesAndLaddersDITests\AcceptanceTests.cpp, you'll find test case declaration that just needs filling in.
 
-'''
+```
 TEST(AcceptanceTests, GivenBoardWith10Squares_WhenIThrowA10_TheGameShouldEndWithASingleThrow)
 {
 }
-'''
+```
 
 To complete this, you will need to write a test die, like the test board you used in the Task 3.
 
