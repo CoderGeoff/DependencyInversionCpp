@@ -80,6 +80,7 @@
     <ClInclude Include="Exports.h" />
     <ClInclude Include="IDie.h" />
     <ClInclude Include="ISnakesAndLadders.h" />
+    <ClInclude Include="Move.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SnakesAndLadders.h" />
     <ClInclude Include="SnakesAndLaddersFactory.h" />
@@ -91,6 +92,7 @@
     <ClCompile Include="Die.cpp" />
     <ClCompile Include="IDie.cpp" />
     <ClCompile Include="ISnakesAndLadders.cpp" />
+    <ClCompile Include="Move.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SnakesAndLadders.cpp" />
     <ClCompile Include="SnakesAndLaddersFactory.cpp" />

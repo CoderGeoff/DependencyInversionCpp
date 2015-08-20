@@ -6,7 +6,8 @@
 #include "Board.h"
 
 SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
-    : m_Board(10)
+    : m_Board(10), 
+    m_Move(m_Board, std::cout)
 {
     std::transform(players.begin(), players.end(), back_inserter(m_Players), [](const std::string& name){ return Player(name);});
 }
@@ -29,36 +30,11 @@ void SnakesAndLadders::Play()
         std::cout << player.Name() << " has thrown a " << thrown << std::endl;
         PrintMoving(thrown);
 
-        int newPosition = MovePlayer(player.Square(), thrown, std::cout);
+        int newPosition = m_Move.Execute(player.Square(), thrown);
         player.Square(newPosition);
     } 
 
     std::cout << "You've won! << " << std::endl;
-}
-
-int SnakesAndLadders::MovePlayer(int startSquare, int squaresToMove, std::ostream& out)
-{
-    // move the number of square shown on the die
-    int newPosition = startSquare + squaresToMove;
-    if (newPosition > m_Board.LastSquare())
-    {
-        // if we've overshot the last square, we have to go back
-        int numberOfSpacesToGoBack = m_Board.LastSquare() - newPosition;
-        newPosition = m_Board.LastSquare() - numberOfSpacesToGoBack;
-        out << "Bad luck - you over shot the end!" << std::endl;
-    }
-    out << "You're now on " << newPosition << std::endl;
-
-    // check to see if we're at the head of a snake
-    std::pair<int, int> snake;
-    if (m_Board.TryGetSnakeWithHeadAt(newPosition, &snake))
-    {
-        out << "Oh no, you've landed on a snake. Down you go!" << std::endl;
-        newPosition = snake.second;
-        out << "You're now on " << newPosition << std::endl;
-    }
-
-    return newPosition;
 }
 
 void SnakesAndLadders::PrintMoving(int count)
