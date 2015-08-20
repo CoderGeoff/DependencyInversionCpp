@@ -29,14 +29,14 @@ void SnakesAndLadders::Play()
         std::cout << player.Name() << " has thrown a " << thrown << std::endl;
         PrintMoving(thrown);
 
-        int newPosition = MovePlayer(player.Square(), thrown);
+        int newPosition = MovePlayer(player.Square(), thrown, std::cout);
         player.Square(newPosition);
     } 
 
     std::cout << "You've won! << " << std::endl;
 }
 
-int SnakesAndLadders::MovePlayer(int startSquare, int squaresToMove)
+int SnakesAndLadders::MovePlayer(int startSquare, int squaresToMove, std::ostream& out)
 {
     // move the number of square shown on the die
     int newPosition = startSquare + squaresToMove;
@@ -45,17 +45,17 @@ int SnakesAndLadders::MovePlayer(int startSquare, int squaresToMove)
         // if we've overshot the last square, we have to go back
         int numberOfSpacesToGoBack = m_Board.LastSquare() - newPosition;
         newPosition = m_Board.LastSquare() - numberOfSpacesToGoBack;
-        std::cout << "Bad luck - you over shot the end!" << std::endl;
+        out << "Bad luck - you over shot the end!" << std::endl;
     }
-    std::cout << "You're now on " << newPosition << std::endl;
+    out << "You're now on " << newPosition << std::endl;
 
     // check to see if we're at the head of a snake
     std::pair<int, int> snake;
     if (m_Board.TryGetSnakeWithHeadAt(newPosition, &snake))
     {
-        std::cout << "Oh no, you've landed on a snake. Down you go!" << std::endl;
+        out << "Oh no, you've landed on a snake. Down you go!" << std::endl;
         newPosition = snake.second;
-        std::cout << "You're now on " << newPosition << std::endl;
+        out << "You're now on " << newPosition << std::endl;
     }
 
     return newPosition;

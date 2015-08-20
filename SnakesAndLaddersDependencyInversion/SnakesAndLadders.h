@@ -1,4 +1,5 @@
 #pragma once
+#include <ostream>
 #include <string>
 #include <vector>
 #include "Player.h"
@@ -13,7 +14,7 @@ public:
     explicit SnakesAndLadders(std::vector<std::string>& players);
     void Play() override;
 private:
-    int MovePlayer(int startSquare, int squaresToMove);
+    int MovePlayer(int startSquare, int squaresToMove, std::ostream& out);
     void PrintMoving(int count);
 };
 
