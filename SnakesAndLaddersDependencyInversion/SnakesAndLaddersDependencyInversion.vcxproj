@@ -76,9 +76,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="ConsoleUserInterface.h" />
     <ClInclude Include="Die.h" />
     <ClInclude Include="Exports.h" />
+    <ClInclude Include="IDie.h" />
     <ClInclude Include="ISnakesAndLadders.h" />
+    <ClInclude Include="IUserInterface.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SnakesAndLadders.h" />
     <ClInclude Include="SnakesAndLaddersFactory.h" />
@@ -88,8 +91,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="ConsoleUserInterface.cpp" />
     <ClCompile Include="Die.cpp" />
+    <ClCompile Include="IDie.cpp" />
     <ClCompile Include="ISnakesAndLadders.cpp" />
+    <ClCompile Include="IUserInterface.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SnakesAndLadders.cpp" />
     <ClCompile Include="SnakesAndLaddersFactory.cpp" />
