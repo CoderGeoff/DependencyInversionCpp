@@ -2,14 +2,15 @@
 #include <algorithm>
 #include <thread>
 #include <iostream>
-#include "Die.h"
+#include "IDie.h"
 #include "Board.h"
 #include "Move.h"
 #include "MoveOutcome.h"
 
-SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
-    : m_Board(std::make_shared<Board>(10)), 
-    m_Move(m_Board)
+SnakesAndLadders::SnakesAndLadders(std::shared_ptr<IBoard> board, std::shared_ptr<IDie> die, std::vector<std::string>& players)
+    : m_Board(board), 
+    m_Die(die),
+    m_Move(board)
 {
     std::transform(players.begin(), players.end(), back_inserter(m_Players), [](const std::string& name){ return Player(name);});
 }
@@ -28,7 +29,7 @@ void SnakesAndLadders::Play()
         std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
         getc(stdin);
 
-        int thrown = Die::Throw();
+        int thrown = m_Die->Throw();
         std::cout << player.Name() << " has thrown a " << thrown << std::endl;
         PrintMoving(thrown);
 

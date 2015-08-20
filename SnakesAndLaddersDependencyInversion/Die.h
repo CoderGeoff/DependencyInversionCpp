@@ -1,7 +1,9 @@
 #pragma once
-class Die
+#include "IDie.h"
+
+class Die : public IDie
 {
 public:
-    static int Throw();
+    int Throw() const;
 };
 
