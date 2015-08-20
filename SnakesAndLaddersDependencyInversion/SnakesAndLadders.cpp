@@ -6,8 +6,7 @@
 #include "Board.h"
 
 SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
-    : m_Board(10),
-    m_CurrentPlayerIndex(0)
+    : m_Board(10)
 {
     std::transform(players.begin(), players.end(), back_inserter(m_Players), [](const std::string& name){ return Player(name);});
 }
