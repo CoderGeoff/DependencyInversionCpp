@@ -33,6 +33,8 @@ void SnakesAndLadders::Play()
         int newPosition = MovePlayer(player.Square(), thrown);
         player.Square(newPosition);
     } 
+
+    std::cout << "You've won! << " << std::endl;
 }
 
 int SnakesAndLadders::MovePlayer(int startSquare, int squaresToMove)
@@ -55,12 +57,6 @@ int SnakesAndLadders::MovePlayer(int startSquare, int squaresToMove)
         std::cout << "Oh no, you've landed on a snake. Down you go!" << std::endl;
         newPosition = snake.second;
         std::cout << "You're now on " << newPosition << std::endl;
-    }
-
-    // see if the player has won
-    if (newPosition == m_Board.LastSquare())
-    {
-        std::cout << "You've won! << " << std::endl;
     }
 
     return newPosition;
