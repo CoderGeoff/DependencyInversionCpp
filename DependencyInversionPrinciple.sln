@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DependencyInversion", "DependencyInversion\DependencyInversion.vcxproj", "{E845F97E-19F5-408D-8652-17196D76DEE4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakesAndLadders", "SnakesAndLadders\SnakesAndLadders.vcxproj", "{E845F97E-19F5-408D-8652-17196D76DEE4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DependencyInversionTests", "DependencyInversionTests\DependencyInversionTests.vcxproj", "{C20C94A5-70D7-4C7D-BA38-BBDC817C7EA6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakesAndLaddersTests", "SnakesAndLaddersTests\SnakesAndLaddersTests.vcxproj", "{C20C94A5-70D7-4C7D-BA38-BBDC817C7EA6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A800830D-7AA3-49A9-9066-5397B8225E78} = {A800830D-7AA3-49A9-9066-5397B8225E78}
 		{E845F97E-19F5-408D-8652-17196D76DEE4} = {E845F97E-19F5-408D-8652-17196D76DEE4}
@@ -14,7 +14,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DependencyInversionTests", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GoogleTest", "GoogleTest\GoogleTest.vcxproj", "{20A878D1-D277-4508-A35E-C871407DF9FD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakesAndLadders", "SnakesAndLadders\SnakesAndLadders.vcxproj", "{E8067621-897A-43D5-B5D0-827C1ABBBCA1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleBasedGame", "ConsoleBasedGame\ConsoleBasedGame.vcxproj", "{E8067621-897A-43D5-B5D0-827C1ABBBCA1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E845F97E-19F5-408D-8652-17196D76DEE4} = {E845F97E-19F5-408D-8652-17196D76DEE4}
 	EndProjectSection

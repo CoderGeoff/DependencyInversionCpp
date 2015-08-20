@@ -5,7 +5,7 @@
 #include <memory>
 class ISnakesAndLadders;
 
-class DEPENDENCYINVERSION_API SnakesAndLaddersFactory
+class SNAKESANDLADDERS_API SnakesAndLaddersFactory
 {
 public:
     SnakesAndLaddersFactory() = delete;
