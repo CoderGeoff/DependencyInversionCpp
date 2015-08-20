@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(AcceptanceTests, GivenASavingsAccount_WhenIAttemptToGoOverdrawn_TheTransactionFails)
+TEST(AcceptanceTests, GivenAPlayerOnSquare1_WhenTheyTakeATurn_TheyShouldMoveForwardTheNumberShownOnTheDie)
 {
-    
+
 }
