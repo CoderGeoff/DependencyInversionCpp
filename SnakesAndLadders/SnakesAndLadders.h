@@ -11,7 +11,7 @@ class SnakesAndLadders : public ISnakesAndLadders
     std::vector<Player> m_Players;
     int m_CurrentPlayerIndex;
 public:
-    explicit SnakesAndLadders(std::vector<std::string> players);
+    explicit SnakesAndLadders(std::vector<std::string>& players);
     void Play() override;
 private:
     bool TakeNextTurn();

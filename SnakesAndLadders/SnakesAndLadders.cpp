@@ -1,11 +1,11 @@
 #include "SnakesAndLadders.h"
 #include <algorithm>
 #include <thread>
+#include <iostream>
 #include "Die.h"
 #include "Board.h"
-#include <iostream>
 
-SnakesAndLadders::SnakesAndLadders(std::vector<std::string> players)
+SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
     : m_Board(10),
     m_CurrentPlayerIndex(0)
 {
