@@ -78,6 +78,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="Die.h" />
     <ClInclude Include="Exports.h" />
+    <ClInclude Include="IBoard.h" />
     <ClInclude Include="IDie.h" />
     <ClInclude Include="ISnakesAndLadders.h" />
     <ClInclude Include="Move.h" />
@@ -92,6 +93,7 @@
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Die.cpp" />
+    <ClCompile Include="IBoard.cpp" />
     <ClCompile Include="IDie.cpp" />
     <ClCompile Include="ISnakesAndLadders.cpp" />
     <ClCompile Include="Move.cpp" />
