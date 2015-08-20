@@ -3,6 +3,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(DiceTests, WhenIThrowTheDice_IShouldGetANumberBetween1And6)
+TEST(MoveTests, GivenIAmOnSquare2_WhenIMove1Square_IShouldBeOnSquare3)
 {
+
 }

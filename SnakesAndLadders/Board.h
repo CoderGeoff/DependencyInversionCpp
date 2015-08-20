@@ -5,7 +5,7 @@ class Board
 {
 public:
     explicit Board(int sizeOfOneSide);
-    int TryGetSnakeWithHeadAt(int square, std::pair<int, int>* snake) const;
+    bool TryGetSnakeWithHeadAt(int square, std::pair<int, int>* snake) const;
     int LastSquare() const;
 private:
     static std::pair<int, int> CreateSnake(int lowestSquareForSnakeHead, int highestSquareForSnakeHead);

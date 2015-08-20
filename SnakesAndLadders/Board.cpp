@@ -8,7 +8,7 @@ m_Snakes(MakeSnakes(sizeOfOneSide))
 {
 }
 
-int Board::TryGetSnakeWithHeadAt(int square, std::pair<int, int>* snake) const
+bool Board::TryGetSnakeWithHeadAt(int square, std::pair<int, int>* snake) const
 {
     auto iter = m_Snakes.find(square);
     if (iter == m_Snakes.end())

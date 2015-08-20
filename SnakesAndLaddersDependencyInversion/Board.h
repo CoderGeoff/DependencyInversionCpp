@@ -6,7 +6,7 @@ class Board : public IBoard
 {
 public:
     explicit Board(int sizeOfOneSide);
-    int TryGetSnakeWithHeadAt(int square, std::pair<int, int>* snake) const override;
+    bool TryGetSnakeWithHeadAt(int square, std::pair<int, int>* snake) const override;
     int LastSquare() const override;
 private:
     static std::pair<int, int> CreateSnake(int lowestSquareForSnakeHead, int highestSquareForSnakeHead);
