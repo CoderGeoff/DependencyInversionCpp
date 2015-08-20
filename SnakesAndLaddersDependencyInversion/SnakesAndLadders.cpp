@@ -18,25 +18,26 @@ void SnakesAndLadders::Play()
     srand(static_cast<unsigned>(time(&randomSeed)));
 
     std::cout << "Let's start" << std::endl;
-    while (TakeNextTurn())
+    for (Player& player = m_Players[m_CurrentPlayerIndex];
+        player.Square() != m_Board.LastSquare(); 
+        player = m_Players[m_CurrentPlayerIndex])
     {
+        std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
+        getc(stdin);
+        player.Square(MovePlayer(player.Name(), player.Square()));
         m_CurrentPlayerIndex = ++m_CurrentPlayerIndex % m_Players.size();
     } 
 }
 
-bool SnakesAndLadders::TakeNextTurn()
+int SnakesAndLadders::MovePlayer(const std::string& name, int square)
 {
-    Player& player = m_Players[m_CurrentPlayerIndex];
-    std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
-    getc(stdin);
-
     // throw the die
     int thrown = Die::Throw();
-    std::cout << player.Name() << " has thrown a " << thrown << std::endl;
+    std::cout << name << " has thrown a " << thrown << std::endl;
     PrintMoving(thrown);
 
     // move the number of square shown on the die
-    int newPosition = player.Square() + thrown;
+    int newPosition = square + thrown;
     if (newPosition > m_Board.LastSquare())
     {
         // if we've overshot the last square, we have to go back
@@ -54,16 +55,14 @@ bool SnakesAndLadders::TakeNextTurn()
         newPosition = snake.second;
         std::cout << "You're now on " << newPosition << std::endl;
     }
-    player.Square(newPosition);
 
     // see if the player has won
     if (newPosition == m_Board.LastSquare())
     {
         std::cout << "You've won! << " << std::endl;
-        return false;
     }
 
-    return true;
+    return newPosition;
 }
 
 void SnakesAndLadders::PrintMoving(int count)
