@@ -16,14 +16,5 @@ class BoardWith10SquaresAndNoSnakes : public IBoard
 
 TEST(MoveTests, GivenIAmOnSquare2_WhenIMove1Square_IShouldBeOnSquare3)
 {
-    // Given
-    auto board = std::make_shared<BoardWith10SquaresAndNoSnakes>();
-    int startSquare = 2;
-    Move move(board);
 
-    // When
-    auto outcome = move.Execute(startSquare, 1);
-
-    // Then
-    ASSERT_EQ(3, outcome.SquareAtEndOfMove());
 }
