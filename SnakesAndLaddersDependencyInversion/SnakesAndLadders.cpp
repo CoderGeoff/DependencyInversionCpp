@@ -30,11 +30,12 @@ void SnakesAndLadders::Play()
         std::cout << player.Name() << " has thrown a " << thrown << std::endl;
         PrintMoving(thrown);
 
-        player.Square(MovePlayer(player.Name(), player.Square(), thrown));
+        int newPosition = MovePlayer(player.Square(), thrown);
+        player.Square(newPosition);
     } 
 }
 
-int SnakesAndLadders::MovePlayer(const std::string& name, int startSquare, int squaresToMove)
+int SnakesAndLadders::MovePlayer(int startSquare, int squaresToMove)
 {
     // move the number of square shown on the die
     int newPosition = startSquare + squaresToMove;

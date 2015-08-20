@@ -14,7 +14,7 @@ public:
     explicit SnakesAndLadders(std::vector<std::string>& players);
     void Play() override;
 private:
-    int MovePlayer(const std::string& name, int startSquare, int squareToMove);
+    int MovePlayer(int startSquare, int squaresToMove);
     void PrintMoving(int count);
 };
 
