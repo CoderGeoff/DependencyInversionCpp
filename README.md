@@ -1,10 +1,22 @@
 # DependencyInversionPrincipleCpp
-An exercise about the dependency inversion principle
+An exercise to underline the Dependency Inversion Principle, using C++ and Visual Studio.
+Based on Visual Studio 2013.
 
 This exercise is based on the popular board game of snakes and ladders, which you can read up about here <https://en.wikipedia.org/wiki/Snakes_and_Ladders>, although, to keep things more simple, this version has only 
 snakes and no ladders. You should make sure you're familiar with the rules. Here's a clear, succinct version: <http://www.ehow.com/facts_5163203_snakes-amp-ladders-rules.html>.
 
-# Code that doesn't adhere to DIP
+## Getting started
+
+1. Clone the repository 
+2. Open Visual Studio
+3. Open the solution file, DependencyInversionPrinciple.sln, in the root directory of the repository
+4. Build the project in Debug
+5. Run the tests, Debug/SnakesAndLaddersTests.exe and Debug/SnakesAndLaddersDITests.exe
+6. Have a look at the code in SnakesAndLadders and SnakesAndLaddersTests, as indicated below:
+
+# Code that doesn't adhere to the Dependency Inversion Principle
+
+In ConsoleBasedGame, there's an version of the game you and run on a console and play. It has a simple implementation of `main()` in ConsoleBasedGame.cpp.
 
 In SnakesAndLadders, there's an implementation of the game that doesn't adhere to the DependencyInversionPrinciple. It has the following classes:
 
@@ -18,6 +30,7 @@ In SnakesAndLadders, there's an implementation of the game that doesn't adhere t
 | SnakesAndLadders | The game itself. It has one method, play, that interacts with the console as you play the game |
 
 There are no tests for SnakesAndLadders, but there is a project,  SnakesAndLaddersTests, which is already set up for writing acceptance tests on the game. 
+Currently, the only way to test the implementation is to run Debug\ConsoleBasedGame.exe manually.
 
 ## Task 1
 Your task is to write a test to prove that, given a player on the first square on the board (numbered 1), when they take a move, they move forward the number of squares on the dice. 
@@ -48,7 +61,7 @@ TEST(AcceptanceTests, GivenABoad_WhenAPlayerLandsOnTheLastSquare_TheGameShouldEn
  
 You have 15 minutes.
 
-# Code that adheres to a greater degree to the Dependency Inversion Principle
+# Code that adheres a bit more to the Dependency Inversion Principle
 
 Now look in 
 
