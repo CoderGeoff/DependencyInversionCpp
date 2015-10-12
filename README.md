@@ -44,7 +44,7 @@ TEST(MoveTests, GivenAPlayerOnSquare97_WhenTheyMove3_TheyShouldEndUpOnSquare98)
 ```
 
 ## Task 2
-Ok, that was easy. Now write a test to prove that, given a move that lands a player on snake, that they end up at the bottom of the snake.
+Now write a test to prove that, given a move that lands a player on snake, that they end up at the bottom of the snake.
 
 ```
 TEST(MoveTests, GivenASnakeFromSquare2To1_WhenAPlayerMovesOnToSquare2_TheyShouldEndUpOnSquare1)
