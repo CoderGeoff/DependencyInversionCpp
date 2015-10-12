@@ -27,7 +27,6 @@ MoveOutcome Move::Execute(int startSquare, int squaresToMove)
     if (m_Board->TryGetSnakeWithHeadAt(newPosition, &snake))
     {
         outcomeBuilder.WentDownSnakeTo(snake.second);
-        newPosition = snake.second;
     }
 
     return outcomeBuilder.Build();
