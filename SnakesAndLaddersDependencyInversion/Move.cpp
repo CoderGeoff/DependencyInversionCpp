@@ -17,7 +17,7 @@ MoveOutcome Move::Execute(int startSquare, int squaresToMove)
     if (newPosition > m_Board->LastSquare())
     {
         // if we've overshot the last square, we have to go back
-        int numberOfSpacesToGoBack = m_Board->LastSquare() - newPosition;
+        int numberOfSpacesToGoBack = newPosition - m_Board->LastSquare();
         newPosition = m_Board->LastSquare() - numberOfSpacesToGoBack;
         outcomeBuilder.OvershotTo(newPosition);
     }
