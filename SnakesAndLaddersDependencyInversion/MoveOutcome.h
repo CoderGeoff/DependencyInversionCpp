@@ -1,6 +1,4 @@
 #pragma once
-#include <utility>
-#include <memory>
 
 namespace DependencyInversion {
 class MoveOutcome

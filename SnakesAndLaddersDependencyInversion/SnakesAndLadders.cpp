@@ -3,9 +3,10 @@
 #include <thread>
 #include <iostream>
 #include "IDie.h"
-#include "Board.h"
+#include "IBoard.h"
 #include "Move.h"
 #include "MoveOutcome.h"
+#include <map>
 
 using namespace DependencyInversion;
 

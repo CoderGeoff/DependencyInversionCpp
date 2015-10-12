@@ -21,6 +21,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakesAndLaddersDependencyInversion", "SnakesAndLaddersDependencyInversion\SnakesAndLaddersDependencyInversion.vcxproj", "{9749ACC4-5036-430E-9D71-2AE5EFED183F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakesAndLaddersDITests", "SnakesAndLaddersDITests\SnakesAndLaddersDITests.vcxproj", "{DC6F265A-B0B8-4C5C-B792-AF1BFBA9AD3A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9749ACC4-5036-430E-9D71-2AE5EFED183F} = {9749ACC4-5036-430E-9D71-2AE5EFED183F}
+		{20A878D1-D277-4508-A35E-C871407DF9FD} = {20A878D1-D277-4508-A35E-C871407DF9FD}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 #pragma once
 #include <memory>
-#include "Board.h"
+#include "IBoard.h"
 
 namespace DependencyInversion {
 class MoveOutcome;
