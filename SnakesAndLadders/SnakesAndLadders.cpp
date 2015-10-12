@@ -50,6 +50,7 @@ bool SnakesAndLadders::IsFirstMove() const
 {
     return m_CurrentPlayerIndex == NotStarted;
 }
+
 void SnakesAndLadders::PrintMoving(int count)
 {
     static std::map<int, std::string> Numbers =
