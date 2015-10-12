@@ -78,11 +78,11 @@ void SnakesAndLadders::PrintMove(const MoveOutcome& outcome, int a)
     {
         std::cout << "Bad luck - you over shot the end!" << std::endl;
     }
-    std::cout << "You're now on " << outcome.SquareAtEndOfDiceCount() << std::endl;
+    std::cout << "You're now on " << outcome.SquareAtEndOfDiceCount() + 1 << std::endl;
 
     if (outcome.HitSnake())
     {
         std::cout << "Oh no, you've landed on a snake. Down you go!" << std::endl;
-        std::cout << "You're now on " << outcome.SquareAtEndOfMove() << std::endl;
+        std::cout << "You're now on " << outcome.SquareAtEndOfMove() + 1 << std::endl;
     }
 }
