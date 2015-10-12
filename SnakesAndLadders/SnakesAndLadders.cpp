@@ -18,8 +18,6 @@ SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
 
 void SnakesAndLadders::Play()
 {
-    time_t randomSeed;
-    srand(static_cast<unsigned>(time(&randomSeed)));
     std::cout << "Let's start" << std::endl;
 
     for (int playerIndex = 0;

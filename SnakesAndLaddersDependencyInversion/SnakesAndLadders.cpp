@@ -19,8 +19,6 @@ SnakesAndLadders::SnakesAndLadders(std::shared_ptr<IBoard> board, std::shared_pt
 
 void SnakesAndLadders::Play()
 {
-    time_t randomSeed;
-    srand(static_cast<unsigned>(time(&randomSeed)));
     std::cout << "Let's start" << std::endl;
 
     for (int playerIndex = 0;
