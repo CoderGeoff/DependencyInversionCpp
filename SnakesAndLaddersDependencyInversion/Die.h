@@ -4,6 +4,6 @@
 class Die : public IDie
 {
 public:
-    int Throw() const;
+    int Throw() const override;
 };
 
