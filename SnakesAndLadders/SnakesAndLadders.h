@@ -4,17 +4,19 @@
 #include "Player.h"
 #include "Board.h"
 #include "ISnakesAndLadders.h"
+#include "Move.h"
 
 class SnakesAndLadders : public ISnakesAndLadders
 {
     Board m_Board;
     std::vector<Player> m_Players;
+    Move m_Move;
     int m_CurrentPlayerIndex;
 public:
     explicit SnakesAndLadders(std::vector<std::string>& players);
     void Play() override;
 private:
-    bool TakeNextTurn();
+    void PrintMove(const MoveOutcome& moveOutcome, int a);
     void PrintMoving(int count);
 };
 
