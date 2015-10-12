@@ -2,6 +2,7 @@
 #include <memory>
 #include "Board.h"
 
+namespace DependencyInversion {
 class MoveOutcome;
 
 class Move
@@ -11,4 +12,4 @@ public:
     Move(const std::shared_ptr<IBoard>& board);
     MoveOutcome Execute(int startSquare, int squaresToMove);
 };
-
+}

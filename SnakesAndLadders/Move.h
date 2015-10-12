@@ -1,6 +1,7 @@
 #pragma once
 #include "Board.h"
 
+namespace WithoutDependencyInversion {
 class MoveOutcome;
 
 class Move
@@ -10,4 +11,4 @@ public:
     explicit Move(Board* board);
     MoveOutcome Execute(int startSquare, int squaresToMove);
 };
-
+}

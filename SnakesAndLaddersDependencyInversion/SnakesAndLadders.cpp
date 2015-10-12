@@ -7,6 +7,8 @@
 #include "Move.h"
 #include "MoveOutcome.h"
 
+using namespace DependencyInversion;
+
 SnakesAndLadders::SnakesAndLadders(std::shared_ptr<IBoard> board, std::shared_ptr<IDie> die, std::vector<std::string>& players)
     : m_Board(board), 
     m_Die(die),

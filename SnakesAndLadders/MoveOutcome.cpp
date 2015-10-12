@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "MoveOutcome.h"
 
+using namespace WithoutDependencyInversion;
 
 MoveOutcome::MoveOutcome(int squareAtEndOfDiceCount, int squareAtEndOfMove, bool overshot)
     : m_SquareAtEndOfDiceCount(squareAtEndOfDiceCount),

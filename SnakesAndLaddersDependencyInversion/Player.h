@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 
+namespace DependencyInversion {
 class Player
 {
     std::string m_Name;
@@ -11,4 +12,4 @@ public:
     void Square(int newPosition);
     int Square() const;
 };
-
+}

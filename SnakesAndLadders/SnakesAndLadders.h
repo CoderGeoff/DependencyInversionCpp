@@ -6,6 +6,7 @@
 #include "ISnakesAndLadders.h"
 #include "Move.h"
 
+namespace WithoutDependencyInversion {
 class SnakesAndLadders : public ISnakesAndLadders
 {
     Board m_Board;
@@ -19,4 +20,4 @@ private:
     void PrintMove(const MoveOutcome& moveOutcome, int a);
     void PrintMoving(int count);
 };
-
+}

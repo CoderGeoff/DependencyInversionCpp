@@ -4,6 +4,8 @@
 #include "Board.h"
 #include "Die.h"
 
+using namespace DependencyInversion;
+
 std::unique_ptr<ISnakesAndLadders> SnakesAndLaddersFactory::Create(std::vector<std::string> players)
 {
     auto board = std::make_shared<Board>(10);

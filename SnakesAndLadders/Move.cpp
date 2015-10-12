@@ -2,6 +2,8 @@
 #include "MoveOutcomeBuilder.h"
 #include "MoveOutcome.h"
 
+using namespace WithoutDependencyInversion;
+
 Move::Move(Board* board)
     : m_Board(board)
 {}

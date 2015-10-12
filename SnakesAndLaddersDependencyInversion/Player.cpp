@@ -2,6 +2,8 @@
 #include "Player.h"
 #include <string>
 
+using namespace DependencyInversion;
+
 Player::Player(const std::string& name)
     : m_Name(name),
     m_CurrentSquare(0)

@@ -2,6 +2,7 @@
 #include <utility>
 #include <memory>
 
+namespace DependencyInversion {
 class MoveOutcome
 {
 private:
@@ -15,4 +16,4 @@ public:
     int SquareAtEndOfDiceCount() const;
     int SquareAtEndOfMove() const;
 };
-
+}

@@ -2,6 +2,8 @@
 #include "Board.h"
 #include <ctime>
 
+using namespace WithoutDependencyInversion;
+
 Board::Board(int sizeOfOneSide)
 : m_LastSquare((sizeOfOneSide * sizeOfOneSide) - 1),
 m_Snakes(MakeSnakes(sizeOfOneSide))

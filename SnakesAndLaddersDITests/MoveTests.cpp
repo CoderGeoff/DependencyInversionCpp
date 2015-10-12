@@ -5,6 +5,8 @@
 
 #include <gtest/gtest.h>
 
+using namespace DependencyInversion;
+
 class BoardWith10SquaresAndNoSnakes : public IBoard
 {
     bool TryGetSnakeWithHeadAt(int square, std::pair<int, int>* snake) const override

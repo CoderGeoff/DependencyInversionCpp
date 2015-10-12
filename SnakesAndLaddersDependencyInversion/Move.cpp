@@ -2,6 +2,8 @@
 #include "MoveOutcomeBuilder.h"
 #include "MoveOutcome.h"
 
+using namespace DependencyInversion;
+
 Move::Move(const std::shared_ptr<IBoard>& board)
     : m_Board(board)
 {}

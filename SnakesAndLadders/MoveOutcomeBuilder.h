@@ -1,4 +1,5 @@
 #pragma once
+namespace WithoutDependencyInversion {
 class MoveOutcome;
 
 class MoveOutcomeBuilder
@@ -12,4 +13,4 @@ public:
     void WentDownSnakeTo(int square);
     MoveOutcome Build() const;
 };
-
+}

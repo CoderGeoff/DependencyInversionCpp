@@ -2,6 +2,7 @@
 #include <map>
 #include "IBoard.h"
 
+namespace DependencyInversion {
 class Board : public IBoard
 {
 public:
@@ -14,4 +15,4 @@ private:
     int m_LastSquare;
     std::map <int, int> m_Snakes;
 };
-
+}

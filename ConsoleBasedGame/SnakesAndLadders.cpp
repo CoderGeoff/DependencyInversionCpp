@@ -6,6 +6,8 @@
 #include "SnakesAndLadders.h"
 #include "SnakesAndLaddersFactory.h"
 
+using namespace WithoutDependencyInversion;
+
 int _tmain(int argc, _TCHAR* argv[])
 {
     std::cout << "Welcome to Snakes and Ladders" << std::endl;

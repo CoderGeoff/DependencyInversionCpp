@@ -1,6 +1,7 @@
 #pragma once
 #include <map>
 
+namespace WithoutDependencyInversion {
 class Board
 {
 public:
@@ -13,4 +14,4 @@ private:
     int m_LastSquare;
     std::map <int, int> m_Snakes;
 };
-
+}

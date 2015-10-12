@@ -7,9 +7,9 @@
 #include "Move.h"
 #include "Player.h"
 
+namespace DependencyInversion {
 class IDie;
 class IBoard;
-
 class MoveOutcome;
 
 class SnakesAndLadders : public ISnakesAndLadders
@@ -25,4 +25,4 @@ private:
     void PrintMove(const MoveOutcome& moveOutcom);
     void PrintMoving(int count);
 };
-
+}

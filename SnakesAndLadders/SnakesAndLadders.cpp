@@ -6,6 +6,8 @@
 #include "MoveOutcome.h"
 #include "Board.h"
 
+using namespace WithoutDependencyInversion;
+
 SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
     : m_Board(10),
     m_Move(&m_Board),

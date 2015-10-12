@@ -1,4 +1,5 @@
 #pragma once
+namespace WithoutDependencyInversion {
 class MoveOutcome
 {
 private:
@@ -12,3 +13,4 @@ public:
     int SquareAtEndOfDiceCount() const;
     int SquareAtEndOfMove() const;
 };
+}

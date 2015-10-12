@@ -1,6 +1,7 @@
 #include "MoveOutcomeBuilder.h"
 #include "MoveOutcome.h"
 
+using namespace DependencyInversion;
 
 MoveOutcomeBuilder::MoveOutcomeBuilder(int square)
     : m_SquareAtEndOfDiceCount(square),
