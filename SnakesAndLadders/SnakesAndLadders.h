@@ -16,7 +16,9 @@ class SnakesAndLadders : public ISnakesAndLadders
 public:
     explicit SnakesAndLadders(std::vector<std::string>& players);
     void Play() override;
+    bool IsFinished() const override;
 private:
+    bool IsFirstMove() const;
     void PrintMove(const MoveOutcome& moveOutcome, int a);
     void PrintMoving(int count);
 };

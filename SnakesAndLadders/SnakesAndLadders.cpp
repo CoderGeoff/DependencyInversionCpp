@@ -8,38 +8,48 @@
 
 using namespace WithoutDependencyInversion;
 
+static const int NotStarted = -1;
+
 SnakesAndLadders::SnakesAndLadders(std::vector<std::string>& players)
     : m_Board(10),
     m_Move(&m_Board),
-    m_CurrentPlayerIndex(0)
+    m_CurrentPlayerIndex(NotStarted)
 {
     std::transform(players.begin(), players.end(), back_inserter(m_Players), [](const std::string& name){ return Player(name);});
 }
 
 void SnakesAndLadders::Play()
 {
-    std::cout << "Let's start" << std::endl;
-
-    for (int playerIndex = 0;
-        m_Players[playerIndex].Square() != m_Board.LastSquare();
-        playerIndex = ++playerIndex % m_Players.size())
+    if (IsFirstMove())
     {
-        Player& player = m_Players[playerIndex];
-        std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
-        getc(stdin);
-
-        int thrown = Die::Throw();
-        std::cout << player.Name() << " has thrown a " << thrown << std::endl;
-        PrintMoving(thrown);
-
-        MoveOutcome outcome = m_Move.Execute(player.Square(), thrown);
-        PrintMove(outcome, 1);
-        player.Square(outcome.SquareAtEndOfMove());
+        std::cout << "Let's start" << std::endl;
+        m_CurrentPlayerIndex = 0;
     }
 
-    std::cout << "You've won! << " << std::endl;
+    Player& player = m_Players[m_CurrentPlayerIndex];
+    std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
+    getc(stdin);
+
+    int thrown = Die::Throw();
+    std::cout << player.Name() << " has thrown a " << thrown << std::endl;
+    PrintMoving(thrown);
+
+    MoveOutcome outcome = m_Move.Execute(player.Square(), thrown);
+    PrintMove(outcome, 1);
+    player.Square(outcome.SquareAtEndOfMove());
+
+    m_CurrentPlayerIndex = ++m_CurrentPlayerIndex % m_Players.size();
 }
 
+bool SnakesAndLadders::IsFinished() const
+{
+    return std::any_of(m_Players.begin(), m_Players.end(), [this](const Player& player){ return player.Square() == m_Board.LastSquare(); });
+}
+
+bool SnakesAndLadders::IsFirstMove() const
+{
+    return m_CurrentPlayerIndex == NotStarted;
+}
 void SnakesAndLadders::PrintMoving(int count)
 {
     static std::map<int, std::string> Numbers =

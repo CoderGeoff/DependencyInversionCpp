@@ -24,6 +24,9 @@ int _tmain(int argc, _TCHAR* argv[])
     } while (true);
 
     std::unique_ptr<ISnakesAndLadders> game = SnakesAndLaddersFactory::Create(players);
-    game->Play();
+    while (!game->IsFinished())
+    {
+        game->Play();
+    }
 }
 
