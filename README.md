@@ -22,44 +22,56 @@ In SnakesAndLadders, there's an implementation of the game that doesn't adhere t
 
 | Class | Description |
 |-------|-------------|
-| Board | Represents the board of 100 squares, with snakes added randomly |
-| Die | The single die; can be thrown to get a random number from 1 to 6 |
+| Class | Description |
+|-------|-------------|
+| Board | A board, with 100 squares and snakes added randomly |
+| Die | A  die that gives random numbers from 1 to 6 |
 | Player | Represents a player on the board |
-| ISnakesAndLadders | An interface to the game. It is used by ConsoleBasedGame |
-| SnakesAndLaddersFactory | A class that creates a new game of Snakes and Ladders. Again, it's used by ConsoleBasedGame |
 | SnakesAndLadders | The game itself. It has one method, play, that interacts with the console as you play the game |
+| Move | Has the responsibility for moving a player a given number of players forward on the board. It takes care of landing on snakes and overshooting the end of the board |
+| MoveOutcome | A class the describes what happened to the player during the move |
+| MoveOutcomeBuilder | A utility class used during to player's move to build MoveOutcome objects |
+| SnakesAndLadders | The game itself. It has two methods, Play and IsFinished |
 
 There are no tests for SnakesAndLadders, but there is a project,  SnakesAndLaddersTests, which is already set up for writing acceptance tests on the game. 
 Currently, the only way to test the implementation is to run Debug\ConsoleBasedGame.exe manually.
 
 ## Task 1
-Your task is to write a test to prove that, given a player on the first square on the board (numbered 1), when they take a move, they move forward the number of squares on the dice. 
-If you look in  SnakesAndLaddersTests\AcceptanceTests.cpp, you'll find test case declaration that just needs filling in.
+Your task is to write a test to prove that, given a move that overshoots the end of the board by one, the player ends up on the square before the last one. SnakesAndLaddersTests\MoveTests.cpp, you'll find test case declaration that just needs filling in.
 
 ```
-TEST(AcceptanceTests, GivenAPlayerOnSquare1_WhenTheyTakeATurn_TheyShouldMoveForwardTheNumberShownOnTheDie)
+TEST(MoveTests, GivenAPlayerOnSquare97_WhenTheyMove3_TheyShouldEndUpOnSquare98)
 {
 }
 ```
 
-This is not straightforward task, but it is possible! You will have to change the Snakes And Ladders code to achieve it. If you want, you can  run the game to see whether it's still working; just run ConsoleBasedGame.exe.
-
-You have 15 minutes.
-
-# Task 2
-If you succeeded at the first task your next is to write a test case to prove that the games ends when a player reaches the last square on the board.
-
-Your task is to write a test to prove the game ends when a player reaches the last square on the board. The test case should look something like this;
+## Task 2
+Ok, that was easy. Now write a test to prove that, given a move that lands a player on snake, the they end up at the bottom of the snake.
 
 ```
-TEST(AcceptanceTests, GivenABoad_WhenAPlayerLandsOnTheLastSquare_TheGameShouldEndWithNoMoreDiceThrows)
+TEST(MoveTests, GivenASnakeFromSquare2To1_WhenAPlayerMovesOnToSquare2_TheyShouldEndUpOnSquare1)
 {
 }
 ```
+
+# Task 3
+
+The next task is to write a test to prove that the game ends when a player reaches the last square on the board. Note that you are now testing SnakesAndLadders, and so you need a new test suite. The test case should look something like this;
+
+```
+TEST(SnakesAndLaddersTests, WhenAPlayerLandsOnTheLastSquare_TheGameShouldEnd)
+{
+}
+```
+
+# Task 4
  
- or something to this effect. 
+Your last task is to prove that when a player throws the die, they move the number of squares shown. 
+You test could be something like this. 
  
-You have 15 minutes.
+TEST(SnakesAndLaddersTests, GivenAPlayersThrowMissesAnySnakesAndDoesntReachTheEndOfTheBoard_WhenAPlayerMoves_TheyShouldMoveForwardTheNumberOfSquaresThrown)
+{
+}
 
 # Code that adheres a bit more to the Dependency Inversion Principle
 
@@ -80,41 +92,4 @@ In SnakesAndLaddersDependencyInversion:
 | MoveOutcomeBuilder | A utility class used during to player's move to build MoveOutcome objects |
 | SnakesAndLadders | The game itself. It has one method, play, that interacts with the console as you play the game |
 
-The tests for SnakesAndLaddersDependencyInversion are in SnakesAndLaddersDITests, but as with the SnakesAndLadders, there are no tests as yet.
-
-| Class | Description |
-|-------|-------------|
-| AcceptanceTest | Used for testing the overall game |
-| MoveTests | Used for testing individual moves |
-| BoardWith10SquaresAndNoSnakes | This is a board with just 10 squares and no snkaes that can be used in test scenarios |
-
-## Task 3
-
-Your task is to write a test to prove that, given a player on the second square on the board (numbered 2), when they  move 1, they end up on square 3. 
-If you look in  SnakesAndLaddersDITests\MoveTests.cpp, you'll find test case declaration that just needs filling in.
-
-```
-TEST(MoveTests, GivenIAmOnSquare2_WhenIMove1Square_IShouldBeOnSquare3)
-{
-}
-```
-
-You will find it useful to use BoardWith10SquaresAndNoSnakes.
-
-15 minutes.
-
-## Task 4
-
-Your second task is to write a test to  prove that when a player moves to the last square on the board, the game ends with out any further dice throws. 
-If you look in  SnakesAndLaddersDITests\AcceptanceTests.cpp, you'll find test case declaration that just needs filling in.
-
-```
-TEST(AcceptanceTests, GivenBoardWith10Squares_WhenIThrowA10_TheGameShouldEndWithASingleThrow)
-{
-}
-```
-
-To complete this, you will need to write a test die, like the test board you used in the Task 3.
-
-15 minutes.
-
+Compare you code, as it stands after Task 4, with the code here.
