@@ -2,11 +2,12 @@
 #include <algorithm>
 #include <thread>
 #include <iostream>
+#include <map>
+
 #include "IDie.h"
 #include "IBoard.h"
 #include "Move.h"
 #include "MoveOutcome.h"
-#include <map>
 
 using namespace DependencyInversion;
 
