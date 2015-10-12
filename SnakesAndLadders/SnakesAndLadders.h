@@ -19,7 +19,7 @@ public:
     bool IsFinished() const override;
 private:
     bool IsFirstMove() const;
-    void PrintMove(const MoveOutcome& moveOutcome, int a);
+    void PrintMove(const MoveOutcome& moveOutcome);
     void PrintMoving(int count);
 };
 }

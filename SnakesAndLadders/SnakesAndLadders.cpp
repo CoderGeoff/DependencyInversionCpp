@@ -35,7 +35,7 @@ void SnakesAndLadders::Play()
     PrintMoving(thrown);
 
     MoveOutcome outcome = m_Move.Execute(player.Square(), thrown);
-    PrintMove(outcome, 1);
+    PrintMove(outcome);
     player.Square(outcome.SquareAtEndOfMove());
 
     m_CurrentPlayerIndex = ++m_CurrentPlayerIndex % m_Players.size();
@@ -72,7 +72,7 @@ void SnakesAndLadders::PrintMoving(int count)
     std::cout << std::endl;
 }
 
-void SnakesAndLadders::PrintMove(const MoveOutcome& outcome, int a)
+void SnakesAndLadders::PrintMove(const MoveOutcome& outcome)
 {
     if (outcome.Overshot())
     {
