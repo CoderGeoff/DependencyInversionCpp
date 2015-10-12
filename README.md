@@ -22,8 +22,6 @@ In SnakesAndLadders, there's an implementation of the game that doesn't adhere t
 
 | Class | Description |
 |-------|-------------|
-| Class | Description |
-|-------|-------------|
 | Board | A board, with 100 squares and snakes added randomly |
 | Die | A  die that gives random numbers from 1 to 6 |
 | Player | Represents a player on the board |
@@ -46,7 +44,7 @@ TEST(MoveTests, GivenAPlayerOnSquare97_WhenTheyMove3_TheyShouldEndUpOnSquare98)
 ```
 
 ## Task 2
-Ok, that was easy. Now write a test to prove that, given a move that lands a player on snake, the they end up at the bottom of the snake.
+Ok, that was easy. Now write a test to prove that, given a move that lands a player on snake, that they end up at the bottom of the snake.
 
 ```
 TEST(MoveTests, GivenASnakeFromSquare2To1_WhenAPlayerMovesOnToSquare2_TheyShouldEndUpOnSquare1)
@@ -68,10 +66,12 @@ TEST(SnakesAndLaddersTests, WhenAPlayerLandsOnTheLastSquare_TheGameShouldEnd)
  
 Your last task is to prove that when a player throws the die, they move the number of squares shown. 
 You test could be something like this. 
- 
+
+```
 TEST(SnakesAndLaddersTests, GivenAPlayersThrowMissesAnySnakesAndDoesntReachTheEndOfTheBoard_WhenAPlayerMoves_TheyShouldMoveForwardTheNumberOfSquaresThrown)
 {
 }
+```
 
 # Code that adheres a bit more to the Dependency Inversion Principle
 
@@ -92,4 +92,4 @@ In SnakesAndLaddersDependencyInversion:
 | MoveOutcomeBuilder | A utility class used during to player's move to build MoveOutcome objects |
 | SnakesAndLadders | The game itself. It has one method, play, that interacts with the console as you play the game |
 
-Compare you code, as it stands after Task 4, with the code here.
+Compare your code as it stands after Task 4 with the code here.
