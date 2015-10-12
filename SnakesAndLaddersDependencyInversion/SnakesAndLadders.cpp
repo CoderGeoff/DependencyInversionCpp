@@ -11,36 +11,48 @@
 
 using namespace DependencyInversion;
 
+static const int NotStarted = -1;
+
 SnakesAndLadders::SnakesAndLadders(std::shared_ptr<IBoard> board, std::shared_ptr<IDie> die, std::vector<std::string>& players)
     : m_Board(board), 
     m_Die(die),
-    m_Move(board)
+    m_Move(board),
+    m_CurrentPlayerIndex(NotStarted)
 {
     std::transform(players.begin(), players.end(), back_inserter(m_Players), [](const std::string& name){ return Player(name);});
 }
 
 void SnakesAndLadders::Play()
 {
-    std::cout << "Let's start" << std::endl;
-
-    for (int playerIndex = 0;
-        m_Players[playerIndex].Square() != m_Board->LastSquare();
-        playerIndex = ++playerIndex % m_Players.size())
+    if (IsFirstMove())
     {
-        Player& player = m_Players[playerIndex];
-        std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
-        getc(stdin);
+        std::cout << "Let's start" << std::endl;
+        m_CurrentPlayerIndex = 0;
+    }
 
-        int thrown = m_Die->Throw();
-        std::cout << player.Name() << " has thrown a " << thrown << std::endl;
-        PrintMoving(thrown);
+    Player& player = m_Players[m_CurrentPlayerIndex];
+    std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
+    getc(stdin);
 
-        MoveOutcome outcome= m_Move.Execute(player.Square(), thrown);
-        PrintMove(outcome);
-        player.Square(outcome.SquareAtEndOfMove());
-    } 
+    int thrown = m_Die->Throw();
+    std::cout << player.Name() << " has thrown a " << thrown << std::endl;
+    PrintMoving(thrown);
 
-    std::cout << "You've won! << " << std::endl;
+    MoveOutcome outcome = m_Move.Execute(player.Square(), thrown);
+    PrintMove(outcome);
+    player.Square(outcome.SquareAtEndOfMove());
+
+    m_CurrentPlayerIndex = ++m_CurrentPlayerIndex % m_Players.size();
+}
+
+bool SnakesAndLadders::IsFinished() const
+{
+    return std::any_of(m_Players.begin(), m_Players.end(), [this](const Player& player){ return player.Square() == m_Board->LastSquare(); });
+}
+
+bool SnakesAndLadders::IsFirstMove() const
+{
+    return m_CurrentPlayerIndex == NotStarted;
 }
 
 void SnakesAndLadders::PrintMoving(int count)

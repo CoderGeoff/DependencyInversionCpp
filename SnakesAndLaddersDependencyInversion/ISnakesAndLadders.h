@@ -3,7 +3,8 @@ namespace DependencyInversion {
 class ISnakesAndLadders
 {
 public:
-    virtual void Play() = 0;
     virtual ~ISnakesAndLadders() = 0 {}
+    virtual void Play() = 0;
+    virtual bool IsFinished() const = 0;
 };
 }

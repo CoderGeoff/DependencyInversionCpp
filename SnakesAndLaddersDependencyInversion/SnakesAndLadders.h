@@ -18,10 +18,13 @@ class SnakesAndLadders : public ISnakesAndLadders
     std::shared_ptr<IDie> m_Die;
     Move m_Move;
     std::vector<Player> m_Players;
+    int m_CurrentPlayerIndex; 
 public:
     explicit SnakesAndLadders(std::shared_ptr<IBoard> board, std::shared_ptr<IDie> die, std::vector<std::string>& players);
     void Play() override;
+    bool IsFinished() const override;
 private:
+    bool IsFirstMove() const;
     void PrintMove(const MoveOutcome& moveOutcom);
     void PrintMoving(int count);
 };
