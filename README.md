@@ -7,11 +7,11 @@ snakes and no ladders. You should make sure you're familiar with the rules. Here
 
 ## Getting started
 
-1. Clone the repository 
+1. Clone the repository, check the master branch (this happens by default) 
 2. Open Visual Studio
 3. Open the solution file, DependencyInversionPrinciple.sln, in the root directory of the repository
 4. Build the project in Debug
-5. Run the tests, Debug/SnakesAndLaddersTests.exe and Debug/SnakesAndLaddersDITests.exe
+5. Run the tests, Debug/SnakesAndLaddersTests.exe 
 6. Have a look at the code in SnakesAndLadders and SnakesAndLaddersTests, as indicated below:
 
 # Code that doesn't adhere to the Dependency Inversion Principle
@@ -35,7 +35,7 @@ There are no tests for SnakesAndLadders, but there is a project,  SnakesAndLadde
 Currently, the only way to test the implementation is to run Debug\ConsoleBasedGame.exe manually.
 
 ## Task 1
-Your task is to write a test to prove that, given a move that overshoots the end of the board by one, the player ends up on the square before the last one. SnakesAndLaddersTests\MoveTests.cpp, you'll find test case declaration that just needs filling in.
+Your task is to write a test to prove that, given a move that overshoots the end of the board by one, the player ends up on the square before the last one. SnakesAndLaddersTests\MoveTests.cpp, you'll find a test case declaration that just needs filling in.
 
 ```
 TEST(MoveTests, GivenAPlayerOnSquare97_WhenTheyMove3_TheyShouldEndUpOnSquare98)
@@ -75,9 +75,7 @@ TEST(SnakesAndLaddersTests, GivenAPlayersThrowMissesAnySnakesAndDoesntReachTheEn
 
 # Code that adheres a bit more to the Dependency Inversion Principle
 
-Now look in 
-
-In SnakesAndLaddersDependencyInversion:
+Now check the branch 'DependencyInversion', where is a version of the game that adheres more to the Dependency Inversion principle.
 
 | Class | Description |
 |-------|-------------|
@@ -92,4 +90,4 @@ In SnakesAndLaddersDependencyInversion:
 | MoveOutcomeBuilder | A utility class used during to player's move to build MoveOutcome objects |
 | SnakesAndLadders | The game itself. It has one method, play, that interacts with the console as you play the game |
 
-Compare your code as it stands after Task 4 with the code here.
+Try tasks 1 - 4 again, starting with this code.
