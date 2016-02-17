@@ -18,14 +18,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleBasedGame", "Console
 		{E845F97E-19F5-408D-8652-17196D76DEE4} = {E845F97E-19F5-408D-8652-17196D76DEE4}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakesAndLaddersDependencyInversion", "SnakesAndLaddersDependencyInversion\SnakesAndLaddersDependencyInversion.vcxproj", "{9749ACC4-5036-430E-9D71-2AE5EFED183F}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakesAndLaddersDITests", "SnakesAndLaddersDITests\SnakesAndLaddersDITests.vcxproj", "{DC6F265A-B0B8-4C5C-B792-AF1BFBA9AD3A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9749ACC4-5036-430E-9D71-2AE5EFED183F} = {9749ACC4-5036-430E-9D71-2AE5EFED183F}
-		{20A878D1-D277-4508-A35E-C871407DF9FD} = {20A878D1-D277-4508-A35E-C871407DF9FD}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -48,14 +40,6 @@ Global
 		{E8067621-897A-43D5-B5D0-827C1ABBBCA1}.Debug|Win32.Build.0 = Debug|Win32
 		{E8067621-897A-43D5-B5D0-827C1ABBBCA1}.Release|Win32.ActiveCfg = Release|Win32
 		{E8067621-897A-43D5-B5D0-827C1ABBBCA1}.Release|Win32.Build.0 = Release|Win32
-		{9749ACC4-5036-430E-9D71-2AE5EFED183F}.Debug|Win32.ActiveCfg = Debug|Win32
-		{9749ACC4-5036-430E-9D71-2AE5EFED183F}.Debug|Win32.Build.0 = Debug|Win32
-		{9749ACC4-5036-430E-9D71-2AE5EFED183F}.Release|Win32.ActiveCfg = Release|Win32
-		{9749ACC4-5036-430E-9D71-2AE5EFED183F}.Release|Win32.Build.0 = Release|Win32
-		{DC6F265A-B0B8-4C5C-B792-AF1BFBA9AD3A}.Debug|Win32.ActiveCfg = Debug|Win32
-		{DC6F265A-B0B8-4C5C-B792-AF1BFBA9AD3A}.Debug|Win32.Build.0 = Debug|Win32
-		{DC6F265A-B0B8-4C5C-B792-AF1BFBA9AD3A}.Release|Win32.ActiveCfg = Release|Win32
-		{DC6F265A-B0B8-4C5C-B792-AF1BFBA9AD3A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
