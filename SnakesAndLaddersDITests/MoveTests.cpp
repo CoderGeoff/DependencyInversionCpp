@@ -23,11 +23,6 @@ TEST(MoveTests, GivenAPlayerOnSquare97_WhenTheyMove3_TheyShouldEndUpOnSquare98)
     // Given
     auto board = std::make_shared<BoardWith100SquaresAndNoSnakes>();
     auto iboard = std::static_pointer_cast<IBoard>(board);
-    Move move(iboard);
 
-    // When
-    MoveOutcome outcome = move.Execute(97, 3);
-
-    // Then
-    ASSERT_EQ(98, outcome.SquareAtEndOfMove());
+    // TODO complete the test
 }
