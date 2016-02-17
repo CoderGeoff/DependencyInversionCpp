@@ -1,9 +1,0 @@
-diff a/SnakesAndLadders/SnakesAndLadders.cpp b/SnakesAndLadders/SnakesAndLadders.cpp	(rejected hunks)
-@@ -30,7 +30,6 @@
-         m_CurrentPlayerIndex = 0;
-     }
- 
--        playerIndex = ++playerIndex % m_Players.size())
- 
-     Player& player = m_Players[m_CurrentPlayerIndex];
-         std::cout << std::endl << "Ok, " << player.Name() << " to go next. Press any key to continue." << std::endl;
